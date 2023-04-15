@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engelsiz Yemek</title>
+    
+    <title>Web Speech API Example</title>
+    <script>
+      const recognition = new window.SpeechRecognition();
+      const startButton = document.querySelector('#startButton');
+      const stopButton = document.querySelector('#stopButton');
+      const text = document.querySelector('#text');
+
+      recognition.lang = 'tr-TR';
+
+      startButton.addEventListener('click', () => {
+        recognition.start();
+        console.log('Speech recognition started');
+      });
+
+      stopButton.addEventListener('click', () => {
+        recognition.stop();
+        console.log('Speech recognition stopped');
+      });
+
+      recognition.addEventListener('result', (e) => {
+        const last = e.results.length - 1;
+        const transcript = e.results[last][0].transcript;
+        text.textContent += transcript;
+      });
+
+      recognition.addEventListener('end', () => {
+        console.log('Speech recognition ended');
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-speech-api/1.0.10/speech-api.min.js"></script>
+    <link rel="stylesheet" href="yemek.css">
+    <link rel="shortcut icon" href="maymun.jpg" type="image/x-icon">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="path/to/index.js"></script>
+    <!-- .tree>.tree__ring[style="--index: $;"]*10>.tree__bauble -->
+
+<div class="tree">
+  <svg class="tree__star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.32 108.44" style="--delay: 0;">
+    <path d="M90.19 104.33L57.12 87.38 24.4 105l5.91-36.69L3.44 42.65l36.72-5.72 16.1-33.5L73.06 36.6l36.83 4.97-26.35 26.21z" fill="none" stroke-width="6.88" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+  <div class="tree__ring" style="--index: 1;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 2;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 3;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 4;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 5;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 6;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 7;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 8;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 9;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+  <div class="tree__ring" style="--index: 10;">
+    <div class="tree__bauble"></div>
+    <div class="tree__bauble"></div>
+  </div>
+</div>
+
+
+</head>
+
+<body>
+  <h1>Web Speech API Example</h1>
+    <button id="startButton">Başla</button>
+    <button id="stopButton">Durdur</button>
+    <p id="text"></p>
+  <div id="like_button_container"></div>
+  <div id="Navbar"></div>
+  
+    <Navbar />
+  
+  
+  
+  
+            <div id="loginModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+                <h1><i>Lütfen bir işlem seçin:</i></h1>
+                <button onclick="showSignUpForm()">Kaydol</button>
+                <button onclick="showLoginForm()">Giriş Yap</button>
+              </div>
+            </div>
+            
+        </div>
+        <div id="contactModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h1>İletişim Formu</h1>
+            <!-- add form elements here -->
+          </div>
+        </div>
+        
+        <div class="center">
+          <h1 class="welcome-message">Engelsiz Yemek Sitesine</h1>
+          <h2 class="welcome-message">HOŞGELDİNİZ</h2>
+
+          <div class="buttons">
+            <button onclick="openMenuModal()">Menü</button>
+
+            <button>Sipariş Ver</button>
+
+          </div>
+        </div>
+    </div >
+    <div id="menuModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeMenuModal()">&times;</span>
+        <h1><i>Lütfen bir menü seçin.</i></h1>
+        <button onclick="selectMenuOption('Sabah')">Sabah Menüsü</button>
+        <button onclick="selectMenuOption('Öğle')">Öğle Menüsü</button>
+        <button onclick="selectMenuOption('Akşam')">Akşam Menüsü</button>
+      </div>
+    </div>
+    <div id="breakfastModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBreakfastModal()">&times;</span>
+        <h1>Lütfen bir kahvaltı seçin:</h1>
+        <button onclick="selectBreakfastOption('Köy Kahvaltısı')">Köy Kahvaltısı</button>
+        <button onclick="selectBreakfastOption('Diyet Kahvaltısı')">Diyet Kahvaltısı</button>
+        <button onclick="selectBreakfastOption('Pazar Kahvaltısı')">Pazar Kahvaltısı</button>
+      </div>
+    </div>
+    <div class="modal-content">
+      <span class="close" onclick="closeContactModal()">&times;</span>
+      <h1>İletişim Formu</h1>
+      <form id="contact-form">
+        <label for="name">İsim:</label><br>
+        <input type="text" id="name" required><br>
+        <label for="email">E-posta:</label><br>
+        <input type="email" id="email" required><br>
+        <label for="phone">Telefon:</label><br>
+        <input type="tel" id="phone"><br>
+        <label for="country">Ülke:</label><br>
+        <select id="country">
+          <option value="">Seçiniz</option>
+          <option value="turkey">Türkiye</option>
+          <option value="usa">ABD</option>
+          <option value="uk">İngiltere</option>
+        </select><br>
+        <label for="message">Mesaj:</label><br>
+        <textarea id="message" required></textarea><br>
+        <input type="submit" value="Gönder">
+      </form>
+    </div>
+    
+    
+          <form>
+            Kullanıcı Adı: <input type="text" id="username"><br>
+            İsim: <input type="text" id="name"><br>
+            E-posta: <input type="email" id="email"><br>
+            Telefon: <input type="tel" id="phone"><br>
+            <input type="button" value="Kaydol" onclick="register()">
+          </form>
+        </div>
+      </div>
+      
+      <button onclick="openModal()">Kaydol</button>
+      <script>
+        function openLoginModal() {
+          // Get the login modal element
+          var modal = document.getElementById("loginModal");
+      
+          // Display the modal
+          modal.style.display = "block";
+        }
+      </script>
+      <script>
+        // Get the login link element
+        var loginLink = document.getElementById("login-link");
+      
+        // Add an event listener to the login link that calls the openLoginModal function when the link is clicked
+        loginLink.addEventListener("click", openLoginModal);
+      </script>
+      <script>
+        function closeLoginModal() {
+          // Get the login modal element
+          var modal = document.getElementById("loginModal");
+      
+          // Hide the modal
+          modal.style.display = "none";
+        }
+      </script>
+      <script>
+        // Get the login modal element
+        var modal = document.getElementById("loginModal");
+      
+        // Add an event listener to the window that closes the modal if a click occurs outside of it
+        window.addEventListener("click", function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+      </script>
+  
+
+    <script src="yemek.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"  ></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"
+     crossorigin
+    ></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" 
+  crossorigin
+  ></script>
+  
+
+    
+</body>
+
+</html>
